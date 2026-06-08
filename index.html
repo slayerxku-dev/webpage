@@ -3,27 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SlayerXku | Coming Soon</title>
+    <title>SlayerXku | The Void Nexus</title>
     <style>
-        body {
-            background-color: #0a0a0a;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+        :root {
+            --bg-color: #0a0a0a;
+            --accent-color: #8a2be2;
+            --text-color: #e0e0e0;
+            --card-bg: #151515;
         }
-        .container { text-align: center; }
-        h1 { color: #8a2be2; font-size: 3rem; margin-bottom: 0.5rem; }
-        p { font-size: 1.2rem; opacity: 0.8; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            margin-top: 5rem;
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: voidPulse 3s infinite ease-in-out;
+        }
+
+        @keyframes voidPulse {
+            0%, 100% { text-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2; }
+            50% { text-shadow: 0 0 20px #bc13fe, 0 0 40px #bc13fe; transform: scale(1.02); }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.6;
+            margin-bottom: 4rem;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 90%;
+            max-width: 1200px;
+            padding-bottom: 5rem;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid #333;
+            padding: 2rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+        }
+
+        .section-card h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-card p, .section-card ul {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        ul { padding-left: 1.2rem; }
+        li { margin-bottom: 0.5rem; }
+
+        a { color: #bc13fe; text-decoration: none; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
+    <header>
+        <h1>SlayerXku</h1>
+        <p class="subtitle">Something powerful is brewing in the void...</p>
+    </header>
+
     <div class="container">
-        <h1>slayerxku.com</h1>
-        <p>Something powerful is brewing in the void...</p>
+        <!-- Section 1: Changelog -->
+        <section class="section-card">
+            <h2>Changelog</h2>
+            <ul>
+                <li><strong>v0.9:</strong> Initial combat system deployed.</li>
+                <li><strong>v0.8:</strong> Grimoire and Alchemy systems added.</li>
+                <li><strong>v0.5:</strong> Core mana engine established.</li>
+            </ul>
+        </section>
+
+        <!-- Section 2: Games -->
+        <section class="section-card">
+            <h2>Games</h2>
+            <p>Explore the darkness in our latest titles:</p>
+            <ul>
+                <li><a href="https://github.com/slayerxku-dev/The-Fate-of-the-Warlock">The Fate of the Warlock</a> - An incremental RPG.</li>
+            </ul>
+        </section>
+
+        <!-- Section 3: Roadmap -->
+        <section class="section-card">
+            <h2>Roadmap</h2>
+            <p>What is coming next to the void:</p>
+            <ul>
+                <li>Equipment Crafting System</li>
+                <li>Persistent Cloud Saving</li>
+                <li>Expanding the Bestiary</li>
+            </ul>
+        </section>
+
+        <!-- Section 4: The Nexus -->
+        <section class="section-card">
+            <h2>The Nexus</h2>
+            <p>Connect with the developer and follow the journey:</p>
+            <ul>
+                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="#">Join the Discord</a></li>
+                <li><a href="#">Contact Support</a></li>
+            </ul>
+        </section>
     </div>
 </body>
 </html>
